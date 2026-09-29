@@ -2,6 +2,9 @@
 
 **Nearby Wells Intelligence System** — a hackathon prototype for drilling decision support.
 
+**Live demo:** [synesis-sih-2026-qjam-nu.vercel.app](https://synesis-sih-2026-qjam-nu.vercel.app)
+*(backend is on Render's free tier and sleeps after 15 min idle — first load may take 30-50s to wake up)*
+
 > **PROTOTYPE / DEMO DATA / SIMULATED eRTMAC.** All wells, events, documents and
 > the "live" drilling feed are synthetic. This project makes no claim to real
 > OIL confidential data, and the risk model makes no claim of real-world
