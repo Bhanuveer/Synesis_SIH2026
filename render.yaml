@@ -1,0 +1,13 @@
+# Render Blueprint — lets you deploy the backend with "New +" -> "Blueprint"
+# instead of configuring every field by hand. See DEPLOY.md for manual steps too.
+services:
+  - type: web
+    name: synesis-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --app-dir backend
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9

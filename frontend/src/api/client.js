@@ -1,4 +1,8 @@
-const BASE = '/api'
+// In dev, Vite's proxy forwards relative /api requests to localhost:8000 (see vite.config.js).
+// In production, set VITE_API_ORIGIN (e.g. https://synesis-backend.onrender.com) at build time
+// so the deployed frontend can reach a separately-hosted backend.
+const ORIGIN = import.meta.env.VITE_API_ORIGIN || ''
+const BASE = `${ORIGIN}/api`
 
 async function handle(res) {
   if (!res.ok) {

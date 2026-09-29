@@ -36,6 +36,10 @@ FAISS, SHAP, spaCy, large LLMs, multi-agent systems.
 /scripts      seed_data.py, train_model.py, generate_demo_documents.py
 ```
 
+## Deploying (for judges to access via a link)
+
+See [DEPLOY.md](DEPLOY.md) — backend on Render, frontend on Vercel, ~10 minutes, no credit card needed.
+
 ## Requirements
 
 - Python 3.10+ (tested on 3.13)

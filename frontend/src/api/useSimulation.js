@@ -1,6 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-const WS_URL = `${location.protocol === 'https:' ? 'wss' : 'ws'}://${location.host}/ws/simulation`
+// In dev, relative to this page's own host (Vite's proxy forwards it to localhost:8000).
+// In production, derive from VITE_API_ORIGIN so the deployed frontend can reach a
+// separately-hosted backend, converting http(s) -> ws(s).
+const API_ORIGIN = import.meta.env.VITE_API_ORIGIN
+const WS_URL = API_ORIGIN
+  ? `${API_ORIGIN.replace(/^http/, 'ws')}/ws/simulation`
+  : `${location.protocol === 'https:' ? 'wss' : 'ws'}://${location.host}/ws/simulation`
 
 export function useSimulation() {
   const [state, setState] = useState(null)
