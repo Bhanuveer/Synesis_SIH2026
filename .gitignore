@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+
+node_modules/
+frontend/dist/
+
+data/synesis_db.json
+models/*.pkl
+models/validation_metrics.json
+documents/*.pdf
+
+.DS_Store
+*.log
